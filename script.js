@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const rows = 8;
     const cols = 8;
     const gemColors = ['blue', 'green', 'red', 'yellow', 'purple', 'orange'];
-    const gemIcons = {
-        blue: 'fas fa-gem',
-        green: 'fas fa-leaf',
-        red: 'fas fa-heart',
-        yellow: 'fas fa-star',
-        purple: 'fas fa-moon',
-        orange: 'fas fa-bolt'
+    const gemImages = {
+        blue: 'img/blue.png',
+        green: 'img/green.png',
+        red: 'img/red.png',
+        yellow: 'img/yellow.png',
+        purple: 'img/purple.png',
+        orange: 'img/orange.png'
     };
     
     let grid = []; // 게임 데이터를 저장할 배열 (DOM 요소가 아닌 데이터 객체)
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     gem.dataset.r = r;
                     gem.dataset.c = c;
 
-                    const icon = document.createElement('i');
-                    icon.className = `${gemIcons[color]} gem-${color}`;
-                    gem.appendChild(icon);
+                    const img = document.createElement('img');
+                    img.src = gemImages[color];
+                    gem.appendChild(img);
                     
                     // 선택된 보석 시각적 표시
                     if (selectedGem && selectedGem.r === r && selectedGem.c === c) {
